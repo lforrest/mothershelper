@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mother's Helper — Greenbrae, CA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Nunito', sans-serif; background: #FFF8F0; color: #3a2e2e; }
+  .hero { background: #D6EEFF; padding: 40px 24px 36px; text-align: center; }
+  .badge { display:inline-block; background:#FF7BAC; color:white; font-size:13px; font-weight:700; padding:6px 18px; border-radius:999px; margin-bottom:14px; }
+  .hero h1 { font-family:'Fredoka One',cursive; font-size:40px; color:#1a6fa8; line-height:1.1; margin-bottom:8px; }
+  .hero h1 span { color:#2e9e6b; }
+  .tagline { font-size:16px; color:#2a5070; font-weight:600; margin-bottom:18px; }
+  .stars { font-size:20px; color:#FFB800; letter-spacing:2px; margin-bottom:8px; }
+  .age-tag { display:inline-block; background:#EAF5FF; border:2px solid #6BBFFF; color:#0C447C; font-size:13px; font-weight:700; padding:4px 14px; border-radius:999px; }
+
+  .photo-section { background: #FFF0F6; padding: 40px 24px; text-align: center; }
+  .photo-section-inner { max-width: 420px; margin: 0 auto; }
+  .photo-section .section-title { font-family:'Fredoka One',cursive; font-size:26px; color:#c94f7a; margin-bottom:6px; }
+  .photo-subtitle { font-size:14px; color:#a06080; margin-bottom:24px; font-weight:600; }
+  .portrait-frame { display: inline-block; border-radius: 24px; overflow: hidden; border: 5px solid white; box-shadow: 0 8px 32px rgba(201,79,122,0.18); }
+  .portrait-img { display: block; width: 280px; height: auto; }
+
+  .about-section { background:#EAF5FF; padding:36px 24px; }
+  .about-inner { max-width:600px; margin:0 auto; }
+  .about-card { background:white; border-radius:20px; padding:28px 24px; border:2px solid #B3D9FF; }
+  .about-name { font-family:'Fredoka One',cursive; font-size:21px; color:#1a6fa8; margin-bottom:3px; }
+  .about-sub { font-size:13px; color:#5a7a9a; font-weight:600; margin-bottom:14px; }
+  .about-intro { font-size:15px; color:#2a5070; line-height:1.7; margin-bottom:18px; }
+  .facts { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .fact { background:#EAF5FF; border:1.5px solid #6BBFFF; border-radius:14px; padding:11px 13px; display:flex; align-items:center; gap:9px; }
+  .fi { font-size:20px; flex-shrink:0; }
+  .ft { font-size:13px; font-weight:700; color:#0C447C; line-height:1.3; }
+
+  .section { padding:36px 24px; max-width:600px; margin:0 auto; }
+  .section-title { font-family:'Fredoka One',cursive; font-size:26px; color:#c94f7a; margin-bottom:20px; text-align:center; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .acard { background:white; border-radius:18px; padding:20px 16px; text-align:center; transition:transform 0.2s; }
+  .acard:hover { transform:translateY(-4px); }
+  .acard:nth-child(1){border:2px solid #FFB3CC;background:#FFF8FB;}
+  .acard:nth-child(2){border:2px solid #B3D9FF;background:#F5FAFF;}
+  .acard:nth-child(3){border:2px solid #B3F0CC;background:#F5FFF8;}
+  .acard:nth-child(4){border:2px solid #FFE0B3;background:#FFFAF5;}
+  .aicon { font-size:34px; margin-bottom:8px; display:block; }
+  .acard h3 { font-size:15px; font-weight:700; color:#3a2e2e; margin-bottom:4px; }
+  .acard p { font-size:13px; color:#7a6666; line-height:1.4; }
+
+  .why-section { background:#E8F8EE; padding:36px 24px; }
+  .why-inner { max-width:600px; margin:0 auto; }
+  .why-list { display:flex; flex-direction:column; gap:12px; }
+  .why-item { background:white; padding:14px 18px; display:flex; align-items:flex-start; gap:14px; border-left:4px solid #2e9e6b; }
+  .wi { font-size:24px; flex-shrink:0; margin-top:2px; }
+  .why-item strong { display:block; font-size:15px; color:#1a5c3a; margin-bottom:2px; }
+  .why-item span { font-size:13px; color:#5a7a6a; line-height:1.4; }
+
+  .ages-section { padding:36px 24px; max-width:600px; margin:0 auto; text-align:center; }
+  .ages-row { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-top:16px; }
+  .ab { width:62px; height:62px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:700; font-size:18px; border:3px solid white; box-shadow:0 2px 8px rgba(0,0,0,0.1); color:white; }
+  .ab span { font-size:10px; font-weight:600; opacity:0.9; }
+  .ab:nth-child(1){background:#FF7BAC;} .ab:nth-child(2){background:#FF9A5C;} .ab:nth-child(3){background:#FFB800;} .ab:nth-child(4){background:#4CAF7D;} .ab:nth-child(5){background:#5BA8FF;}
+
+  .contact-section { background:#FFD6E0; padding:40px 24px; text-align:center; }
+  .contact-inner { max-width:500px; margin:0 auto; }
+  .ccard { background:white; border-radius:20px; padding:28px 24px; margin-top:16px; box-shadow:0 4px 20px rgba(201,79,122,0.15); }
+  .cnote { font-size:15px; color:#6b4f4f; margin-bottom:20px; line-height:1.6; }
+  .cname { font-family:'Fredoka One',cursive; font-size:22px; color:#c94f7a; margin-bottom:4px; }
+  .cphone { font-size:22px; font-weight:700; color:#1a6fa8; margin-bottom:6px; }
+  .cdetail { font-size:14px; color:#888; margin-bottom:20px; }
+  .cta { display:inline-block; background:#FF5089; color:white; font-family:'Fredoka One',cursive; font-size:18px; padding:14px 36px; border-radius:999px; text-decoration:none; }
+  .cta:hover { background:#e0406e; }
+  .divider { text-align:center; font-size:20px; padding:8px; color:#ecc0d0; letter-spacing:8px; }
+  .footer { text-align:center; padding:20px; font-size:13px; color:#b09090; background:#FFF8F0; }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="badge">Mother's Helper</div>
+    <h1>Hi, I'm <span>your helper!</span></h1>
+    <p class="tagline">Fun, caring, and ready to help — while you're still home!</p>
+    <div class="stars">★★★★★</div>
+    <div class="age-tag">9 years old &amp; full of energy!</div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <div class="photo-section">
+    <div class="photo-section-inner">
+      <div class="section-title">Meet Me! 👋</div>
+      <div class="photo-subtitle">Greenbrae, CA · 9 years old · Ready to help!</div>
+      <div class="portrait-frame">
+        <img id="myPhoto" class="portrait-img" alt="Your Mother's Helper — a friendly 9-year-old from Greenbrae">
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <div class="about-section">
+    <div class="about-inner">
+      <div class="section-title" style="color:#1a6fa8;">About Me</div>
+      <div class="about-card">
+        <p class="about-intro">
+          Hi! I'm a confident, enthusiastic 9-year-old who is truly excited to help your family. I'm already a big sister to my 6-year-old sibling, so I know exactly how to connect with little ones — I do it every single day! I'm responsible, caring, and I bring a ton of energy and joy to everything I do.
+        </p>
+        <div class="facts">
+          <div class="fact"><span class="fi">💃</span><span class="ft">I love dancing &amp; performing!</span></div>
+          <div class="fact"><span class="fi">🎤</span><span class="ft">Singer &amp; performer at heart</span></div>
+          <div class="fact"><span class="fi">🍎</span><span class="ft">Snack enthusiast &amp; maker</span></div>
+          <div class="fact"><span class="fi">👧</span><span class="ft">Big sister to a 6-year-old</span></div>
+          <div class="fact"><span class="fi">📍</span><span class="ft">Based in Greenbrae</span></div>
+          <div class="fact"><span class="fi">⭐</span><span class="ft">Confident &amp; ready to help!</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <div class="section">
+    <div class="section-title">What I'll Do With Your Kids!</div>
+    <div class="grid2">
+      <div class="acard"><span class="aicon">🎲</span><h3>Play Games</h3><p>Board games, pretend play, and outdoor fun!</p></div>
+      <div class="acard"><span class="aicon">🎨</span><h3>Arts &amp; Crafts</h3><p>Drawing, painting, collages &amp; creative projects!</p></div>
+      <div class="acard"><span class="aicon">🥪</span><h3>Make Snacks</h3><p>Simple, yummy snacks the kids will love!</p></div>
+      <div class="acard"><span class="aicon">🚶</span><h3>Go On Walks</h3><p>Outdoor adventures in your neighborhood!</p></div>
+    </div>
+  </div>
+
+  <div class="why-section">
+    <div class="why-inner">
+      <div class="section-title" style="color:#1a5c3a;margin-bottom:20px;">Why Moms Love a Mother's Helper</div>
+      <div class="why-list">
+        <div class="why-item"><div class="wi">🏠</div><div><strong>You're always home</strong><span>A mother's helper works while a parent is in the house — total peace of mind!</span></div></div>
+        <div class="why-item"><div class="wi">⏰</div><div><strong>Get things done</strong><span>Finish emails, chores, or just take a breath while the kids are happy and entertained.</span></div></div>
+        <div class="why-item"><div class="wi">💛</div><div><strong>Kids connect easily</strong><span>Little ones love playing with someone close to their age — it's natural and joyful!</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ages-section">
+    <div class="section-title">I Work With Kids Ages 3–7</div>
+    <p style="color:#7a6666;font-size:14px;margin-bottom:4px;">The perfect playmate for little ones!</p>
+    <div class="ages-row">
+      <div class="ab">3<span>yrs</span></div>
+      <div class="ab">4<span>yrs</span></div>
+      <div class="ab">5<span>yrs</span></div>
+      <div class="ab">6<span>yrs</span></div>
+      <div class="ab">7<span>yrs</span></div>
+    </div>
+  </div>
+
+  <div class="contact-section">
+    <div class="contact-inner">
+      <div class="section-title">Ready to Book? Let's Talk!</div>
+      <div class="ccard">
+        <p class="cnote">I'd love to help your family! Please text my mom <strong>Stephanie</strong> to ask about availability. 💕</p>
+        <div class="cname">Stephanie</div>
+        <div class="cphone">📱 415-845-0889</div>
+        <div class="cdetail">Text anytime to check availability!</div>
+        <a class="cta" href="sms:4158450889&body=Hi Stephanie! I saw your daughter's Mother's Helper website and I'd love to learn more about her availability.">Text Stephanie 💬</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">Made with love 💗 · Mother's Helper · Greenbrae · Ages 3–7 · Parent always home</div>
+
+<script>
+document.getElementById('myPhoto').src = 'data:image/jpeg;base64,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
